@@ -8,17 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <style>
-    /* =============================================
-       ⚙️  CẤU HÌNH MÀU SẮC — chỉnh tại đây
-    ============================================= */
     :root {
-      --primary:    #1a6b4a;   /* màu chủ đạo */
-      --accent:     #28a074;   /* màu nhấn */
-      --bg:         #f4f7f5;   /* nền trang */
-      --card-bg:    #ffffff;   /* nền card */
-      --text:       #1c2b24;   /* chữ chính */
-      --text-muted: #6b8278;   /* chữ phụ */
-      --border:     #d6e5dc;   /* viền */
+      --primary:    #1a6b4a;
+      --accent:     #28a074;
+      --bg:         #f4f7f5;
+      --card-bg:    #ffffff;
+      --text:       #1c2b24;
+      --text-muted: #6b8278;
+      --border:     #d6e5dc;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -41,15 +38,15 @@
     .card {
       width: 100%;
       max-width: 420px;
-      background: rgba(255, 255, 255, 0.45);  /* trắng 75% trong suốt */
+      background: rgba(255,255,255,0.45);
       border-radius: 24px;
       overflow: hidden;
       box-shadow: 0 8px 40px rgba(0,0,0,.10);
     }
 
-    /* ── Header ── */
+    /* Header */
     .header {
-      background: rgba(255, 255, 255, 0.45);
+      background: rgba(255,255,255,0.45);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       padding: 40px 24px 32px;
@@ -61,236 +58,97 @@
       position: absolute;
       bottom: -1px; left: 0; right: 0;
       height: 32px;
-      background: rgba(255, 255, 255, 0.45);
+      background: rgba(255,255,255,0.45);
       border-radius: 32px 32px 0 0;
     }
 
-    .avatar-wrap {
-      display: block;
-      text-align: center;
-      position: relative;
-      margin-bottom: 16px;
-    }
-    .avatar, .avatar-placeholder {
-      margin: 0 auto;
-    }
-    .avatar {
-      width: 108px; height: 108px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--border);
-      display: block;
-    }
-    .avatar-placeholder {
-      width: 108px; height: 108px;
-      border-radius: 50%;
-      background: rgba(26,107,74,.1);
-      border: 3px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 40px; color: var(--primary);
-    }
+    .avatar { width: 108px; height: 108px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border); display: block; margin: 0 auto 16px; }
+    .name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .title { font-size: 13px; font-weight: 500; color: var(--accent); margin-bottom: 4px; letter-spacing: .5px; text-transform: uppercase; }
+    .company { font-size: 14px; font-weight: 700; color: var(--primary); }
+    .tagline { margin-top: 8px; font-size: 13px; font-style: italic; color: var(--text-muted); }
 
-    .name {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-    .title {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent);
-      margin-bottom: 4px;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-    }
-    .company {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    .tagline {
-      margin-top: 8px;
-      font-size: 13px;
-      font-style: italic;
-      color: var(--text-muted);
-    }
+    /* Body */
+    .body { padding: 16px 20px 24px; }
 
-    /* ── Body ── */
-    .body { padding: 16px 20px 24px; text-align: left; }
-
-    /* Quick action buttons */
-    .quick-actions {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
+    /* Quick actions */
+    .quick-actions { display: flex; gap: 10px; margin-bottom: 24px; }
     .btn-action {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-      padding: 12px 8px;
-      border-radius: 14px;
-      background: var(--bg);
-      border: 1.5px solid var(--border);
-      text-decoration: none;
-      color: var(--primary);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .3px;
-      cursor: pointer;
-      transition: all .18s;
+      flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px;
+      padding: 12px 8px; border-radius: 14px; background: var(--bg);
+      border: 1.5px solid var(--border); text-decoration: none; color: var(--primary);
+      font-size: 11px; font-weight: 600; letter-spacing: .3px; cursor: pointer; transition: all .18s;
     }
-    .btn-action:hover {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 14px rgba(26,107,74,.25);
-    }
+    .btn-action:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(26,107,74,.25); }
     .btn-action svg { width: 20px; height: 20px; }
 
     /* Section title */
-    .section-title {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
+    .section-title { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
 
     /* Contact rows */
     .contact-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 24px; }
     .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 11px 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: var(--text);
-      transition: background .15s;
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 14px; border-radius: 12px; text-decoration: none; color: var(--text); transition: background .15s;
     }
     .contact-row:hover { background: var(--bg); }
-    .contact-row .icon {
-      width: 36px; height: 36px;
-      background: var(--bg);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      color: var(--primary);
-    }
+    .contact-row .icon { width: 36px; height: 36px; background: var(--bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--primary); }
     .contact-row .icon svg { width: 18px; height: 18px; }
-    .contact-row .info { flex: 1; text-align: left; }
+    .contact-row .info { flex: 1; min-width: 0; }
     .contact-row .label { font-size: 11px; color: var(--text-muted); }
-    .contact-row .value { font-size: 14px; font-weight: 500; }
+    .contact-row .value { font-size: 14px; font-weight: 500; word-break: break-word; }
 
     /* Social grid */
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-bottom: 24px;
-    }
+    .social-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 24px; }
     .social-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      color: var(--text);
-      padding: 12px 6px;
-      border-radius: 14px;
-      border: 1.5px solid var(--border);
-      font-size: 11px;
-      font-weight: 600;
-      transition: all .18s;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      text-decoration: none; color: var(--text); padding: 12px 6px;
+      border-radius: 14px; border: 1.5px solid var(--border); font-size: 11px; font-weight: 600; transition: all .18s;
     }
-    .social-item:hover {
-      border-color: var(--accent);
-      color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(26,107,74,.12);
-    }
+    .social-item:hover { border-color: var(--accent); color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(26,107,74,.12); }
     .social-item svg { width: 22px; height: 22px; }
 
-    /* Bank info */
-    .bank-block {
-      background: var(--bg);
-      border-radius: 14px;
-      padding: 14px 16px;
-      margin-bottom: 10px;
-    }
-    .bank-row { display: flex; justify-content: space-between; align-items: center; }
+    /* Bank block */
+    .bank-block { background: var(--bg); border-radius: 14px; padding: 14px 16px; margin-bottom: 20px; }
+    .bank-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .bank-info { flex: 1; min-width: 0; }
     .bank-name { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
-    .bank-number { font-size: 18px; font-weight: 700; letter-spacing: 1px; color: var(--text); }
+    .bank-number { font-size: 18px; font-weight: 700; letter-spacing: 1px; color: var(--text); word-break: break-all; }
     .bank-holder { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
-    .copy-btn {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 6px 14px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      transition: opacity .15s;
-    }
+    .copy-btn { background: var(--primary); color: #fff; border: none; border-radius: 8px; padding: 8px 14px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; transition: opacity .15s; white-space: nowrap; flex-shrink: 0; }
     .copy-btn:hover { opacity: .85; }
+
+    /* MST row — nút copy nằm bên phải */
+    .mst-row { display: flex; align-items: flex-start; gap: 12px; padding: 11px 14px; border-radius: 12px; }
+    .mst-row .icon { width: 36px; height: 36px; background: var(--bg); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--primary); }
+    .mst-row .icon svg { width: 18px; height: 18px; }
+    .mst-row .info { flex: 1; min-width: 0; }
+    .mst-row .label { font-size: 11px; color: var(--text-muted); margin-bottom: 2px; }
+    .mst-row .value { font-size: 14px; font-weight: 500; word-break: break-word; }
+    .mst-row .copy-btn { margin-top: 2px; align-self: flex-start; }
 
     /* Attachments */
     .attachment-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
     .attachment-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      background: var(--bg);
-      text-decoration: none;
-      color: var(--text);
-      transition: background .15s;
+      display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+      border-radius: 12px; background: var(--bg); text-decoration: none; color: var(--text); transition: background .15s;
     }
     .attachment-item:hover { background: #e3ede8; }
     .attachment-item svg { width: 20px; height: 20px; color: var(--primary); flex-shrink: 0; }
     .attachment-item span { font-size: 13px; font-weight: 500; }
 
-    /* Save contact */
+    /* Save button */
     .save-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 15px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity .18s, transform .18s;
-      margin-bottom: 20px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 15px; background: var(--primary); color: #fff;
+      border: none; border-radius: 14px; font-family: inherit; font-size: 15px;
+      font-weight: 700; cursor: pointer; text-decoration: none; transition: opacity .18s, transform .18s; margin-bottom: 20px;
     }
     .save-btn:hover { opacity: .9; transform: translateY(-1px); }
     .save-btn svg { width: 20px; height: 20px; }
 
     /* Footer */
-    .footer {
-      text-align: center;
-      padding-top: 8px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+    .footer { text-align: center; padding-top: 8px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); }
     .footer a { color: var(--accent); text-decoration: none; }
 
     /* Divider */
@@ -299,13 +157,9 @@
     /* Toast */
     .toast {
       position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
-      background: #1c2b24; color: #fff;
-      padding: 10px 22px; border-radius: 99px;
-      font-size: 13px; font-weight: 500;
-      opacity: 0; pointer-events: none;
-      transition: opacity .25s;
-      white-space: nowrap;
-      z-index: 9999;
+      background: #1c2b24; color: #fff; padding: 10px 22px; border-radius: 99px;
+      font-size: 13px; font-weight: 500; opacity: 0; pointer-events: none;
+      transition: opacity .25s; white-space: nowrap; z-index: 9999;
     }
     .toast.show { opacity: 1; }
   </style>
@@ -314,120 +168,56 @@
 
 <div class="card">
 
-  <!-- ═══════════════════════════════════════
-       HEADER — chỉnh thông tin cá nhân tại đây
-  ═══════════════════════════════════════ -->
+  <!-- HEADER -->
   <div class="header">
-    <div class="avatar-wrap">
-      <!--
-        Cách 1: dùng ảnh URL
-        <img class="avatar" src="https://raw.githubusercontent.com/khcnmt/dbHungCPART/main/iconcpart.png" alt="Avatar" />
-
-        Cách 2: dùng ảnh local (đặt cùng thư mục với file HTML)
-        <img class="avatar" src="iconcpart.png" alt="Avatar" />
-
-        Cách 3: icon chữ cái (mặc định)
-      -->
-      <img class="avatar" src="https://raw.githubusercontent.com/khcnmt/dbHungCPART/main/iconcpart.png" alt="Avatar" />
-
-    <!-- ✏️ THAY ĐỔI THÔNG TIN BÊN DƯỚI -->
+    <img class="avatar" src="https://raw.githubusercontent.com/khcnmt/dbHungCPART/main/iconcpart.png" alt="Avatar" />
     <div class="name">PHẠM SỸ HÙNG</div>
     <div class="title">Giám đốc</div>
     <div class="company">Trung tâm sản xuất sạch hơn CPART</div>
-    <div class="tagline">Bảo vệ môi trường, giá trị tăng thêm cho sản phẩm & phát triển bền vững</div>
+    <div class="tagline">Bảo vệ môi trường, giá trị tăng thêm cho sản phẩm &amp; phát triển bền vững</div>
   </div>
 
   <div class="body">
 
     <!-- Quick actions -->
     <div class="quick-actions">
-      <!-- ✏️ Thay số điện thoại và email -->
       <a class="btn-action" href="tel:+84913214549">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.82a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.84a16 16 0 006.29 6.29l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.82a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.84a16 16 0 006.29 6.29l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         Gọi điện
       </a>
       <a class="btn-action" href="https://zalo.me/0913214549" target="_blank">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.477 2 2 6.297 2 11.5c0 2.775 1.17 5.28 3.05 7.09L4 22l3.5-1.8C8.87 20.7 10.39 21 12 21c5.523 0 10-4.297 10-9.5S17.523 2 12 2z"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.297 2 11.5c0 2.775 1.17 5.28 3.05 7.09L4 22l3.5-1.8C8.87 20.7 10.39 21 12 21c5.523 0 10-4.297 10-9.5S17.523 2 12 2z"/></svg>
         Zalo
       </a>
       <a class="btn-action" href="mailto:cpartvn@gmail.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-          <polyline points="22,6 12,12 2,6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
         Email
       </a>
     </div>
 
-    <!-- Contact info -->
+    <!-- Thông tin liên hệ -->
     <div class="section-title">Thông tin liên hệ</div>
     <div class="contact-list">
-
-      <!-- ✏️ Thay số điện thoại -->
       <a class="contact-row" href="tel:0913214549">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.82a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.84a16 16 0 006.29 6.29l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="label">Điện thoại</div>
-          <div class="value">+84 91 321 4549</div>
-        </div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 11.82a19.79 19.79 0 01-3.07-8.67A2 2 0 012.81 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.84a16 16 0 006.29 6.29l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div class="info"><div class="label">Điện thoại</div><div class="value">+84 91 321 4549</div></div>
       </a>
-
-      <!-- ✏️ Thay email -->
-      <a class="contact-row" href="mailto:cpartvn@gmail.com - contact@cpart.vn">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,12 2,6"/>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="label">Email</div>
-          <div class="value">cpartvn@gmail.com</div>
-        </div>
+      <a class="contact-row" href="mailto:cpartvn@gmail.com">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg></div>
+        <div class="info"><div class="label">Email</div><div class="value">cpartvn@gmail.com</div></div>
       </a>
-
-      <!-- ✏️ Thay địa chỉ -->
-      <a class="contact-row" href="https://maps.google.com/?q=Địa+chỉ+của+bạn" target="_blank">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="label">Địa chỉ VP GD HN</div>
-          <div class="value">6 Nguyễn Công Trứ, Phường Hai Bà Trưng, TP. Hà Nội</div>
-        </div>
+      <a class="contact-row" href="https://maps.google.com/?q=6+Nguyen+Cong+Tru+Ha+Noi" target="_blank">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div class="info"><div class="label">Địa chỉ VP GD HN</div><div class="value">6 Nguyễn Công Trứ, Phường Hai Bà Trưng, TP. Hà Nội</div></div>
       </a>
-
-      <!-- ✏️ Thay website -->
       <a class="contact-row" href="https://cpart.vn" target="_blank">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="label">Website</div>
-          <div class="value">www.cpart.vn</div>
-        </div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <div class="info"><div class="label">Website</div><div class="value">www.cpart.vn</div></div>
       </a>
-
     </div>
 
-    <!-- Social media -->
+    <!-- Mạng xã hội -->
     <div class="section-title">Mạng xã hội</div>
-    <!-- ✏️ Thay link từng mạng xã hội, xóa <a> nếu không dùng -->
     <div class="social-grid">
       <a class="social-item" href="https://www.facebook.com/phamsyhung4549/" target="_blank">
         <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
@@ -439,15 +229,7 @@
       </a>
       <a class="social-item" href="https://www.instagram.com/your-profile" target="_blank">
         <svg viewBox="0 0 24 24" fill="url(#ig-grad)">
-          <defs>
-            <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#f09433"/>
-              <stop offset="25%" style="stop-color:#e6683c"/>
-              <stop offset="50%" style="stop-color:#dc2743"/>
-              <stop offset="75%" style="stop-color:#cc2366"/>
-              <stop offset="100%" style="stop-color:#bc1888"/>
-            </linearGradient>
-          </defs>
+          <defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs>
           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
         </svg>
         Instagram
@@ -476,37 +258,26 @@
 
     <div class="divider"></div>
 
-    <!-- Thông tin thêm -->
+    <!-- Thông tin bổ sung -->
     <div class="section-title">Thông tin bổ sung</div>
     <div class="contact-list" style="margin-bottom: 24px;">
-      <!-- ✏️ Chỉnh lĩnh vực và MST -->
       <div class="contact-row">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-            <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
-          </svg>
-        </div>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
         <div class="info">
           <div class="label">Lĩnh vực</div>
           <div class="value">Chế phẩm sinh học, công nghệ tự động hóa</div>
         </div>
       </div>
-      <div class="contact-row">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-        </div>
+
+      <!-- MST row — layout riêng để nút copy không bị đè -->
+      <div class="mst-row">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
         <div class="info">
-         <div class="label">Mã số thuế</div>
-          <div class="value" id="mst1"><strong>0107298212</strong></div>
-          <div class="value">Số 11/23/383, đường Nguyễn Tam Trinh, tổ 51, Phường Tương Mai, Hà Nội</div>
-</div>
-        <button class="copy-btn" onclick="copyText('mst1')">Sao chép MST</button>
-      </div>
+          <div class="label">Mã số thuế</div>
+          <div class="value"><strong id="mst1">0107298212</strong></div>
+          <div class="value" style="font-size:13px; color:var(--text-muted); margin-top:4px;">Số 11/23/383, đường Nguyễn Tam Trinh, tổ 51, Phường Tương Mai, Hà Nội</div>
         </div>
+        <button class="copy-btn" onclick="copyText('mst1')">Sao chép MST</button>
       </div>
     </div>
 
@@ -514,50 +285,42 @@
 
     <!-- Thông tin ngân hàng -->
     <div class="section-title">Thông tin ngân hàng</div>
-
-    <!-- ✏️ Thay số tài khoản và ngân hàng -->
-    <div class="bank-block" style="margin-bottom: 10px;">
+    <div class="bank-block">
       <div class="bank-row">
-        <div>
+        <div class="bank-info">
           <div class="bank-name">Ngân hàng AGRIBANK</div>
           <div class="bank-number" id="bank1">130.320.105.3625</div>
           <div class="bank-holder">CÔNG TY CỔ PHẦN CPART</div>
-            </div>
+        </div>
+        <button class="copy-btn" onclick="copyText('bank1')">Sao chép STK</button>
+      </div>
+    </div>
+
     <div class="divider"></div>
 
     <!-- Tài liệu đính kèm -->
     <div class="section-title">Tài liệu đính kèm</div>
-    <!-- ✏️ Thêm/xóa link tài liệu -->
     <div class="attachment-list">
       <a class="attachment-item" href="https://nongnghiep.vn/giam-phat-thai-cai-tao-dat-nho-che-pham-emuniv-d365249.html" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         <span>Giảm phát thải, cải tạo đất nhờ chế phẩm vi sinh</span>
       </a>
       <a class="attachment-item" href="https://www.youtube.com/watch?v=uo04LcjGU9U" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
-        </svg>
-        <span>Vi sinh EMuniv và những điều kỳ diệu - Truyền hình HTV </span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span>Vi sinh EMuniv và những điều kỳ diệu - Truyền hình HTV</span>
       </a>
     </div>
 
-    <!-- Save contact button -->
-    <!-- ✏️ Thay link tải vCard nếu có, hoặc giữ onclick để tải file -->
+    <!-- Lưu danh bạ -->
     <button class="save-btn" onclick="downloadVCard()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       Lưu vào danh bạ
     </button>
 
-    <div class="footer">
-      Danh thiếp điện tử
-    </div>
+    <div class="footer">Danh thiếp điện tử</div>
 
-  </div>
-</div>
+  </div><!-- /.body -->
+</div><!-- /.card -->
 
 <div class="toast" id="toast">Đã sao chép!</div>
 
@@ -566,27 +329,14 @@
     const text = document.getElementById(id).textContent.trim();
     navigator.clipboard.writeText(text).then(() => showToast('Đã sao chép: ' + text));
   }
-
   function showToast(msg) {
     const t = document.getElementById('toast');
     t.textContent = msg;
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 2000);
   }
-
-  /* ✏️ Điền thông tin vCard để lưu danh bạ */
   function downloadVCard() {
-    const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:Phạm Sỹ Hùng
-TITLE:Giám đốc
-ORG:Công Ty Cổ Phần CPART
-TEL;TYPE=CELL:+84913214549
-EMAIL:cpartvn@gmail.com
-ADR;TYPE=WORK:;;6 Nguyễn Công Trứ;Phường Hai Bà Trưng;TP;Hà Nội;Vietnam
-URL:https://cpart.vn/
-END:VCARD`;
-
+    const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:Phạm Sỹ Hùng\nTITLE:Giám đốc\nORG:Công Ty Cổ Phần CPART\nTEL;TYPE=CELL:+84913214549\nEMAIL:cpartvn@gmail.com\nADR;TYPE=WORK:;;6 Nguyễn Công Trứ;Phường Hai Bà Trưng;TP;Hà Nội;Vietnam\nURL:https://cpart.vn/\nEND:VCARD`;
     const blob = new Blob([vcard], { type: 'text/vcard' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -594,6 +344,5 @@ END:VCARD`;
     a.click();
   }
 </script>
-
 </body>
 </html>
